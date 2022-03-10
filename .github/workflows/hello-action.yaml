@@ -1,0 +1,33 @@
+name: Hello Github Action Workflow
+
+# events
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: #This gives a button in the UI to run the action without pushing anything in the repository
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest #operating system
+    steps:
+      - uses: actions/checkout@v2 #we are using an action that is created by Github
+      - name: hello world 
+        run: echo "Hello world"
+        shell: bash
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: goodbye world
+        run: echo "Goodbye world"
+        shell: bash
+
+
+
+      
+  
+
+
